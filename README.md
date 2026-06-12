@@ -1,6 +1,7 @@
-# SKILLS: the one home for every agent skill
+# baza-skills: the one home for every agent skill
 
-**DEC-17 (2026-06-12):** this repo is the single canonical home for all agent skills in Kamilla's system. Ratified by Kamilla ("C:\Users\kamil\PROJECTS\SKILLS approved!"); created the same day.
+**DEC-17 (2026-06-12):** this repo is the single canonical home for all agent skills in Kamilla's system. Ratified, created, named, and pushed the same day.
+**Local:** `C:\Users\kamil\PROJECTS\baza-skills` · **Remote:** `github.com/milamanzarek/baza-skills` (private)
 
 ## What lands here (after migration)
 
