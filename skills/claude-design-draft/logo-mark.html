@@ -1,0 +1,65 @@
+<!-- @dsCard group="Brand" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .lockup { display: flex; align-items: center; gap: 18px; }
+  .emblem { filter: drop-shadow(0 0 10px rgba(199,92,110,0.25)); flex: none; }
+  .emblem .syn { stroke: rgba(201,167,232,0.55); stroke-width: 1; }
+  .wm-name { font-family: var(--font-display); font-weight: 700; font-size: 21px; letter-spacing: -0.01em; line-height: 1.1; }
+  .wm-name .oly { color: var(--accent-secondary); font-weight: 600; }
+  .row-marks { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+  .mono-kg { width: 46px; height: 46px; border-radius: var(--radius-md); display: grid; place-items: center;
+    font-family: var(--font-display); font-weight: 700; font-size: 18px; color: #fff;
+    background: linear-gradient(150deg, var(--accent-primary), var(--accent-primary-deep));
+    box-shadow: var(--glow-magenta), var(--inner-top); }
+</style>
+</head>
+<body class="theme-neural">
+
+<div class="row-marks">
+  <!-- primary lockup: emblem + wordmark -->
+  <div class="lockup">
+    <svg class="emblem" width="50" height="50" viewBox="0 0 48 48" aria-label="Kamilla Gafurzianova neural mark">
+      <!-- outer ring synapses -->
+      <path class="syn" fill="none" d="M11 14 L35 11 L39.5 27 L26.5 39.5 L9.5 31 Z" opacity="0.5"/>
+      <!-- hub synapses -->
+      <g class="syn">
+        <line x1="24" y1="23.5" x2="11" y2="14"/>
+        <line x1="24" y1="23.5" x2="35" y2="11"/>
+        <line x1="24" y1="23.5" x2="39.5" y2="27"/>
+        <line x1="24" y1="23.5" x2="26.5" y2="39.5"/>
+        <line x1="24" y1="23.5" x2="9.5" y2="31"/>
+      </g>
+      <!-- node glows -->
+      <circle cx="11" cy="14" r="6" fill="#924bb2" opacity="0.22"/>
+      <circle cx="35" cy="11" r="6.5" fill="#c75c6e" opacity="0.22"/>
+      <circle cx="39.5" cy="27" r="5.5" fill="#d9b8f5" opacity="0.22"/>
+      <circle cx="26.5" cy="39.5" r="6" fill="#c75c6e" opacity="0.22"/>
+      <circle cx="9.5" cy="31" r="5.5" fill="#d9b8f5" opacity="0.22"/>
+      <circle cx="24" cy="23.5" r="9" fill="#f6b187" opacity="0.28"/>
+      <!-- node cores -->
+      <circle cx="11" cy="14" r="2.6" fill="#924bb2"/>
+      <circle cx="35" cy="11" r="3.0" fill="#c75c6e"/>
+      <circle cx="39.5" cy="27" r="2.4" fill="#d9b8f5"/>
+      <circle cx="26.5" cy="39.5" r="2.8" fill="#c75c6e"/>
+      <circle cx="9.5" cy="31" r="2.4" fill="#d9b8f5"/>
+      <circle cx="24" cy="23.5" r="3.8" fill="#f6b187"/>
+      <circle cx="24" cy="23.5" r="1.5" fill="#fff" opacity="0.85"/>
+    </svg>
+    <div class="stack" style="gap:5px">
+      <span class="wm-name">Kamilla Gafurzianova<span class="oly">,&nbsp;OLY</span></span>
+      <span class="kicker" style="color:var(--text-muted)">AI Implementation Consultant</span>
+    </div>
+  </div>
+
+  <!-- compact monogram mark -->
+  <div class="stack" style="align-items:center;gap:8px">
+    <span class="mono-kg">KG</span>
+    <span class="sw-label">Compact</span>
+  </div>
+</div>
+
+<p style="margin:22px 0 0;font-size:12px;color:var(--text-muted);max-width:560px">An interconnected node cluster. Every node is wired to the warm-peach ignition hub <em>and</em> to its neighbors. The mark <strong style="color:var(--text-secondary)">is</strong> the brand message: integration. “OLY” is a post-nominal (Olympian).</p>
+</body></html>

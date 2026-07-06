@@ -1,0 +1,102 @@
+/* preview/_card.css — specimen-card styling for the Design System tab.
+   Pairs with ../colors_and_type.css (theme-neural). Mirrors ui_kits/_shared.css. */
+
+html, body { margin: 0; }
+body { padding: 22px 24px; background:
+    radial-gradient(130% 120% at 50% 0%, var(--nebula-1) 0%, var(--bg-color) 60%, var(--void) 100%);
+  color: var(--text-primary); font-family: var(--font-body); min-height: 100%; }
+* { box-sizing: border-box; }
+
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.col { display: flex; flex-direction: column; gap: 14px; }
+.stack { display: flex; flex-direction: column; gap: 6px; }
+.grid { display: grid; gap: 12px; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  font-family: var(--font-body); font-weight: var(--fw-semibold);
+  letter-spacing: 0; font-size: 14.5px; line-height: 1; border-radius: var(--radius-md); border: 1px solid transparent;
+  padding: 12px 22px; cursor: pointer; transition: all .2s ease; }
+.btn svg { width: 16px; height: 16px; }
+.btn--primary { background: linear-gradient(180deg, color-mix(in srgb, var(--accent-primary) 88%, #fff) 0%, var(--accent-primary) 42%, var(--accent-primary-deep) 100%); border: 1px solid var(--accent-primary-deep); color: var(--accent-on-primary); box-shadow: inset 0 1px 0 rgba(255,255,255,0.28), 0 8px 18px -8px rgba(128,35,56,0.7); }
+.btn--primary:hover { transform: translateY(-1px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 10px 22px -8px rgba(128,35,56,0.75), 0 0 22px rgba(199,92,110,0.4); }
+.btn--primary:active { transform: scale(0.97); box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 0 34px rgba(199,92,110,0.6); }
+.btn--secondary { background: var(--glass-fill); border: 1px solid var(--border-strong); color: var(--text-primary); box-shadow: inset 0 1px 0 var(--glass-highlight); }
+.btn--ghost { background: transparent; border: 1px solid var(--border-color); color: var(--text-secondary); }
+.btn--ghost:hover { border-color: var(--accent-secondary); color: var(--accent-secondary); }
+.btn--danger { background: rgba(224,70,127,.14); border: 1px solid rgba(224,70,127,.5); color: var(--text-danger); }
+.btn--success { background: rgba(217,184,245,.12); border: 1px solid rgba(217,184,245,.5); color: var(--text-success); }
+.btn--sm { padding: 8px 15px; font-size: 13px; }
+.btn--lg { padding: 15px 28px; font-size: 16px; }
+
+/* Chips (rectangular only) */
+.chip { display: inline-flex; align-items: center; gap: 8px; padding: 6px 13px; font-size: 11px;
+  font-weight: var(--fw-semibold); font-family: var(--font-mono); text-transform: uppercase;
+  letter-spacing: 0.10em; border: 1px solid var(--border-color); border-radius: var(--radius-sm);
+  color: var(--text-secondary); background: var(--glass-fill); }
+.chip--filled { background: color-mix(in srgb, var(--accent-primary) 20%, transparent); color: var(--text-primary); border-color: var(--accent-primary); box-shadow: var(--inner-top), 0 0 12px rgba(199,92,110,0.22); }
+.chip--outlined { background: transparent; color: var(--text-muted); }
+.chip--accent { background: color-mix(in srgb, var(--accent-primary) 14%, transparent); color: var(--accent-secondary); border-color: color-mix(in srgb, var(--accent-primary) 45%, transparent); }
+
+/* Badges */
+.badge { display: inline-flex; align-items: center; gap: 6px; font-weight: var(--fw-bold); font-size: 11px;
+  text-transform: uppercase; letter-spacing: 0.08em; padding: 5px 10px; border-radius: var(--radius-sm);
+  border: 1px solid; font-family: var(--font-mono); }
+.badge--primary { background: color-mix(in srgb, var(--accent-primary) 14%, transparent); border-color: color-mix(in srgb, var(--accent-primary) 40%, transparent); color: var(--accent-secondary); }
+.badge--secondary { background: var(--glass-fill); border-color: var(--border-color); color: var(--text-secondary); }
+.badge--success { background: rgba(79,194,161,.12); border-color: rgba(79,194,161,.40); color: var(--text-success); }
+.badge--warning { background: rgba(230,160,106,.12); border-color: rgba(230,160,106,.40); color: var(--text-warning); }
+.badge--danger { background: rgba(214,91,134,.12); border-color: rgba(214,91,134,.40); color: var(--text-danger); }
+.badge--spark { background: rgba(255,158,94,.14); border-color: rgba(255,158,94,.45); color: var(--spark-bright); }
+
+/* Domain tags */
+.dtag { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: var(--radius-sm);
+  border: 1px solid; font-family: var(--font-mono); font-size: 10px; font-weight: var(--fw-bold);
+  text-transform: uppercase; letter-spacing: 0.10em; }
+.dtag--ai { background: var(--domain-ai-bg); border-color: var(--domain-ai-border); color: var(--domain-ai-text); }
+.dtag--bizops { background: var(--domain-bizops-bg); border-color: var(--domain-bizops-border); color: var(--domain-bizops-text); }
+.dtag--marketing { background: var(--domain-marketing-bg); border-color: var(--domain-marketing-border); color: var(--domain-marketing-text); }
+.dtag--community { background: var(--domain-community-bg); border-color: var(--domain-community-border); color: var(--domain-community-text); }
+.dtag--sport { background: var(--domain-sport-bg); border-color: var(--domain-sport-border); color: var(--domain-sport-text); }
+.dtag--education { background: var(--domain-education-bg); border-color: var(--domain-education-border); color: var(--domain-education-text); }
+
+/* PPPP badges */
+.pbadge { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px;
+  font-weight: var(--fw-bold); text-transform: uppercase; letter-spacing: 0.12em; padding: 6px 12px 6px 10px;
+  border-radius: var(--radius-sm); border: 1px solid; background: var(--glass-fill); }
+.pbadge::before { content: ''; width: 9px; height: 9px; border-radius: 50%; flex: none; }
+.pbadge--past { border-color: color-mix(in srgb, var(--p-past) 50%, transparent); color: var(--p-past); }
+.pbadge--past::before { background: var(--p-past); box-shadow: 0 0 14px var(--p-past); }
+.pbadge--present { border-color: color-mix(in srgb, var(--p-present) 50%, transparent); color: var(--p-present); }
+.pbadge--present::before { background: var(--p-present); box-shadow: 0 0 14px var(--p-present); }
+.pbadge--possible { border-color: color-mix(in srgb, var(--p-possible) 50%, transparent); color: var(--p-possible); }
+.pbadge--possible::before { background: var(--p-possible); box-shadow: 0 0 14px var(--p-possible); }
+.pbadge--practice { border-color: color-mix(in srgb, var(--p-practice) 50%, transparent); color: var(--p-practice); }
+.pbadge--practice::before { background: var(--p-practice); box-shadow: 0 0 14px var(--p-practice); }
+.pbadge--protocol { border-color: color-mix(in srgb, var(--p-protocol) 50%, transparent); color: var(--p-protocol); }
+.pbadge--protocol::before { background: var(--p-protocol); box-shadow: 0 0 14px var(--p-protocol); }
+
+/* Nodes + synapse */
+.node { width: 12px; height: 12px; border-radius: 50%; background: var(--accent-primary); box-shadow: var(--glow-magenta); flex: none; }
+.node--lilac { background: var(--accent-secondary); box-shadow: var(--glow-lilac); }
+.node--violet { background: var(--accent-violet); box-shadow: var(--glow-violet); }
+.node--spark { background: var(--spark); box-shadow: var(--glow-spark); }
+.node--sm { width: 8px; height: 8px; } .node--lg { width: 18px; height: 18px; }
+.synapse { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--border-strong), transparent); }
+
+/* Panel */
+.panel { position: relative; background: var(--glass-bg); border: 1px solid var(--glass-border);
+  border-top-color: var(--glass-highlight); border-left-color: var(--glass-highlight);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-md), var(--inner-top); backdrop-filter: var(--backdrop-blur); }
+
+/* Swatch */
+.swatch { width: 100%; height: 56px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); }
+.sw-label { font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); }
+.sw-name { font-size: 12px; color: var(--text-primary); font-weight: var(--fw-semibold); }
+
+/* Field */
+.field { width: 100%; padding: 10px 13px; font-family: var(--font-body); font-size: 14px; color: var(--text-primary);
+  background: var(--bg-deep); border: 1px solid var(--border-color); border-radius: var(--radius-sm);
+  box-shadow: inset 0 1px 4px rgba(0,0,0,0.35); }
+.field::placeholder { color: var(--text-faint); }
+.label { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); }

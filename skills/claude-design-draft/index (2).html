@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The PPPP Method — Kamilla Gafurzianova</title>
+<link rel="stylesheet" href="../../colors_and_type.css" />
+<link rel="stylesheet" href="../_shared.css" />
+<style>
+  html, body { margin: 0; padding: 0; background: var(--bg-color); }
+  .wrap { max-width: var(--measure); margin: 0 auto; padding: 0 32px; }
+  .hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--border-color);
+    background: radial-gradient(120% 100% at 50% 0%, var(--nebula-1) 0%, var(--bg-color) 55%, var(--void) 100%); }
+  .hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .topbar { position: sticky; top: 0; z-index: 60; border-bottom: 1px solid var(--border-color);
+    background: color-mix(in srgb, var(--bg-color) 82%, transparent); backdrop-filter: var(--backdrop-blur); }
+  .topbar .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; padding-bottom: 14px; }
+  .glyph { position: relative; width: 30px; height: 30px; }
+  .glyph .d { position: absolute; width: 6px; height: 6px; border-radius: 50%; }
+  .prow { display: grid; grid-template-columns: 56px 1fr; gap: 22px; align-items: start; padding: 26px; }
+  .pletter { font-family: var(--font-display); font-size: 46px; font-weight: 700; line-height: 1; }
+  @keyframes pulse { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+  @media (max-width: 820px) { .hero-grid, .legend-grid { grid-template-columns: 1fr !important; } }
+</style>
+</head>
+<body class="theme-neural">
+
+<!-- top bar -->
+<div class="topbar"><div class="wrap">
+  <span style="display:inline-flex;align-items:center;gap:12px">
+    <span class="glyph">
+      <span class="d" style="left:3px;top:3px;background:var(--p-past);box-shadow:0 0 8px var(--p-past)"></span>
+      <span class="d" style="right:3px;top:3px;background:var(--p-present);box-shadow:0 0 8px var(--p-present)"></span>
+      <span class="d" style="left:3px;bottom:3px;background:var(--p-possible);box-shadow:0 0 8px var(--p-possible)"></span>
+      <span class="d" style="right:3px;bottom:3px;background:var(--p-practice);box-shadow:0 0 8px var(--p-practice)"></span>
+      <span class="d" style="left:50%;top:50%;transform:translate(-50%,-50%);width:9px;height:9px;background:var(--spark);box-shadow:var(--glow-spark)"></span>
+    </span>
+    <span style="font-family:var(--font-display);font-weight:700;font-size:15px">Kamilla Gafurzianova</span>
+  </span>
+  <a href="../portfolio-site/index.html" class="btn btn--ghost btn--sm"><i data-lucide="arrow-left"></i>Back to CV</a>
+</div></div>
+
+<!-- hero -->
+<header class="hero">
+  <canvas class="neural-field" data-density="0.9" data-spark="true"></canvas>
+  <div class="wrap" style="position:relative;z-index:2;padding-top:80px;padding-bottom:72px">
+    <span class="kicker">Signature framework</span>
+    <h1 class="display" style="font-size:60px;margin-top:16px;text-shadow:var(--text-glow)">The PPPP method</h1>
+    <p class="lead" style="margin-top:20px;max-width:620px;font-size:20px">Four visible P's move a problem from <strong style="color:var(--text-primary);font-weight:600">history</strong> to <strong style="color:var(--text-primary);font-weight:600">habit</strong>. A hidden fifth P — Protocol — is the synapse that connects and standardizes all of them.</p>
+    <div class="row" style="gap:8px;margin-top:26px">
+      <span class="pbadge pbadge--past">Past</span>
+      <span class="pbadge pbadge--present">Present</span>
+      <span class="pbadge pbadge--possible">Possible</span>
+      <span class="pbadge pbadge--practice">Practice</span>
+      <span class="pbadge pbadge--protocol">+ Protocol</span>
+    </div>
+  </div>
+</header>
+
+<!-- diagram + legend -->
+<section class="wrap" style="padding-top:64px;padding-bottom:24px">
+  <div class="hero-grid" style="display:grid;grid-template-columns:1fr 0.9fr;gap:40px;align-items:center">
+    <div style="position:relative;aspect-ratio:1/0.74;border-radius:var(--radius-2xl);border:1px solid var(--border-hairline);background:radial-gradient(80% 80% at 50% 50%, var(--nebula-1), transparent 70%);overflow:hidden">
+      <svg viewBox="0 0 100 74" style="position:absolute;inset:0;width:100%;height:100%">
+        <!-- the thread = Protocol: one continuous strand the beads are strung on -->
+        <path d="M1,58 Q9,55 17,51 Q30,43 40,38 Q52,43 62,45 Q74,37 84,29 Q92,25 99,21" fill="none" stroke="var(--spark)" stroke-width="5" opacity="0.20" stroke-linecap="round"/>
+        <path d="M1,58 Q9,55 17,51 Q30,43 40,38 Q52,43 62,45 Q74,37 84,29 Q92,25 99,21" fill="none" stroke="var(--spark)" stroke-width="1.6" stroke-linecap="round"/>
+        <!-- needle ends -->
+        <circle cx="1" cy="58" r="1.4" fill="var(--spark-bright)"/>
+        <circle cx="99" cy="21" r="1.4" fill="var(--spark-bright)"/>
+        <!-- beads: Past / Present / Possible / Practice -->
+        <g>
+          <circle cx="17" cy="51" r="6" fill="var(--p-past)" opacity="0.22"/>
+          <circle cx="17" cy="51" r="3.4" fill="var(--p-past)"/>
+          <circle cx="40" cy="38" r="6.5" fill="var(--p-present)" opacity="0.22"/>
+          <circle cx="40" cy="38" r="3.7" fill="var(--p-present)"/>
+          <circle cx="62" cy="45" r="6" fill="var(--p-possible)" opacity="0.22"/>
+          <circle cx="62" cy="45" r="3.4" fill="var(--p-possible)"/>
+          <circle cx="84" cy="29" r="6" fill="var(--p-practice)" opacity="0.22"/>
+          <circle cx="84" cy="29" r="3.5" fill="var(--p-practice)"/>
+        </g>
+        <!-- bead labels -->
+        <g font-family="var(--font-mono)" font-size="3.4" font-weight="700" letter-spacing="0.4" text-anchor="middle">
+          <text x="17" y="62" fill="var(--p-past)">PAST</text>
+          <text x="40" y="49" fill="var(--p-present)">PRESENT</text>
+          <text x="62" y="56" fill="var(--p-possible)">POSSIBLE</text>
+          <text x="84" y="40" fill="var(--p-practice)">PRACTICE</text>
+        </g>
+        <!-- thread label -->
+        <text x="4" y="66" font-family="var(--font-mono)" font-size="3.2" font-weight="700" letter-spacing="0.6" fill="var(--spark-bright)">PROTOCOL → THE THREAD</text>
+      </svg>
+    </div>
+    <div>
+      <h2 style="font-size:30px">Protocol is the thread.</h2>
+      <p style="margin-top:14px">Past, Present, Possible and Practice are <strong style="color:var(--text-primary);font-weight:600">beads</strong>. On their own they scatter. <strong style="color:var(--spark-bright);font-weight:600">Protocol</strong> is the thread they're strung on — the repeatable process that runs through every bead, holds them in order, and standardizes whatever you string onto it. Pull the thread and the whole strand moves together.</p>
+      <p style="margin-top:14px;color:var(--text-muted)">It is hidden because it is the line, not the beads — the wiring you stop noticing once it holds.</p>
+    </div>
+  </div>
+</section>
+
+<!-- the five P's, expanded -->
+<section class="wrap" style="padding-top:32px;padding-bottom:72px">
+  <div style="display:flex;flex-direction:column;gap:16px">
+
+    <article class="panel prow">
+      <div class="pletter" style="color:var(--p-past)">P<span style="font-size:18px;vertical-align:super;color:var(--text-muted)">1</span></div>
+      <div>
+        <div class="row" style="gap:10px"><span class="node" style="background:var(--p-past);box-shadow:0 0 14px var(--p-past)"></span><span class="pbadge pbadge--past">Evidence</span></div>
+        <h3 style="margin:12px 0 6px;font-size:23px">Past</h3>
+        <p>What already happened — history, data, prior art, audits. We start from the record, not a guess. Most failures trace back to skipping this.</p>
+        <p style="margin-top:8px;font-family:var(--font-mono);font-size:13px;color:var(--text-muted)">// in practice: audit what exists before proposing anything new.</p>
+      </div>
+    </article>
+
+    <article class="panel prow">
+      <div class="pletter" style="color:var(--p-present)">P<span style="font-size:18px;vertical-align:super;color:var(--text-muted)">2</span></div>
+      <div>
+        <div class="row" style="gap:10px"><span class="node" style="background:var(--p-present);box-shadow:0 0 14px var(--p-present)"></span><span class="pbadge pbadge--present">Diagnosis</span></div>
+        <h3 style="margin:12px 0 6px;font-size:23px">Present</h3>
+        <p>What is true right now — the live state, the constraints, the reality on the ground today. An honest snapshot before any intervention.</p>
+        <p style="margin-top:8px;font-family:var(--font-mono);font-size:13px;color:var(--text-muted)">// in practice: map the current system exactly as it runs, not as it's described.</p>
+      </div>
+    </article>
+
+    <article class="panel prow">
+      <div class="pletter" style="color:var(--p-possible)">P<span style="font-size:18px;vertical-align:super;color:var(--text-muted)">3</span></div>
+      <div>
+        <div class="row" style="gap:10px"><span class="node" style="background:var(--p-possible);box-shadow:0 0 14px var(--p-possible)"></span><span class="pbadge pbadge--possible">Imagination</span></div>
+        <h3 style="margin:12px 0 6px;font-size:23px">Possible</h3>
+        <p>What could be — the option space, the futures worth designing toward. Diverge widely here before converging.</p>
+        <p style="margin-top:8px;font-family:var(--font-mono);font-size:13px;color:var(--text-muted)">// in practice: generate options against the evidence, then choose deliberately.</p>
+      </div>
+    </article>
+
+    <article class="panel prow">
+      <div class="pletter" style="color:var(--p-practice)">P<span style="font-size:18px;vertical-align:super;color:var(--text-muted)">4</span></div>
+      <div>
+        <div class="row" style="gap:10px"><span class="node" style="background:var(--p-practice);box-shadow:0 0 14px var(--p-practice)"></span><span class="pbadge pbadge--practice">Execution</span></div>
+        <h3 style="margin:12px 0 6px;font-size:23px">Practice</h3>
+        <p>Repeated, deliberate action that compounds. The part most people skip — and the part an Olympic career makes non-negotiable.</p>
+        <p style="margin-top:8px;font-family:var(--font-mono);font-size:13px;color:var(--text-muted)">// in practice: ship, measure, repeat — on a cadence, not on a whim.</p>
+      </div>
+    </article>
+
+    <article class="panel prow" style="border-color:color-mix(in srgb, var(--spark) 40%, transparent);box-shadow:var(--shadow-md), var(--glow-spark)">
+      <div class="pletter" style="color:var(--spark-bright)">P<span style="font-size:18px;vertical-align:super;color:var(--text-muted)">5</span></div>
+      <div>
+        <div class="row" style="gap:10px"><span class="node node--spark" style="animation:pulse 2.4s ease-in-out infinite"></span><span class="pbadge pbadge--protocol">Integration · hidden</span></div>
+        <h3 style="margin:12px 0 6px;font-size:23px">Protocol <span style="font-size:14px;color:var(--text-muted);font-weight:400">— the connective fifth P</span></h3>
+        <p>The thread the other four are strung on. Process/Protocol that standardizes and reinforces <em>anything</em> — running through Past, Present, Possible and Practice so four loose beads become one continuous strand.</p>
+        <p style="margin-top:8px;font-family:var(--font-mono);font-size:13px;color:var(--text-muted)">// in practice: write the protocol down so the system survives without you in the room.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<footer style="border-top:1px solid var(--border-color);background:var(--bg-deep)">
+  <div class="wrap" style="padding:28px 32px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+    <span style="font-family:var(--font-mono);font-size:12px;color:var(--text-faint)">PPPP · Past · Present · Possible · Practice · + Protocol</span>
+    <a href="../portfolio-site/index.html" class="btn btn--primary btn--sm">See it applied<i data-lucide="arrow-right"></i></a>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@0.288.0/dist/umd/lucide.min.js"></script>
+<script src="../../assets/neural-field.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

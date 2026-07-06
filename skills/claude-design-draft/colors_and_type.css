@@ -1,0 +1,293 @@
+/* ============================================================================
+   Kamilla Gafurzianova — Neural Design System
+   colors_and_type.css
+
+   Single source of truth for color + typographic foundations.
+
+   Brand: AI Implementation Consultant & Olympic Silver Medalist. A cross-domain
+   generalist (AI · BizOps · Marketing · Community · Sport · Education) whose
+   signature is INTEGRATION — an interconnected digital brain, data flowing
+   between nodes, synapses firing. The visual language is dimensional, luminous,
+   and high-contrast.
+
+   Import this file, then set a theme class on a wrapper:
+
+       <body class="theme-neural"> … </body>   (default — dark, luminous)
+
+   THEMES
+     theme-neural          PRIMARY  · dark void, glowing purple/magenta/lilac nodes
+     theme-document        SECONDARY· warm light dossier (long-form reading / web)
+     theme-print           PRINT    · high-contrast grayscale for PDF export
+
+   HARD RULES (Kamilla's non-negotiables)
+     • NO pill shapes. Rounded corners are fine; fully-round capsules are banned.
+       There is no --radius-pill token by design.
+     • NO flat / dull surfaces. Depth is mandatory — glow, glass, layered shadow,
+       luminance. Every surface should feel like it sits in 3D space.
+     • NO low contrast. Text/!surface pairs target WCAG AA (4.5:1) or better.
+       Accessibility is a first-class concern.
+   ============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ----------------------------------------------------------------------------
+   1. TYPE TOKENS
+   ---------------------------------------------------------------------------- */
+:root {
+  /* Families */
+  --font-display: 'Manrope', system-ui, sans-serif;       /* headings, wordmark, big numbers — native Latin + Cyrillic */
+  --font-body:    'Golos Text', system-ui, sans-serif;    /* body / UI — Paratype, Cyrillic-first */
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace; /* data, labels, code — JetBrains, native Cyrillic */
+
+  /* Type scale (px) — body floor 16px */
+  --fs-display:   68px;  /* hero            line-height 0.96 */
+  --fs-h1:        44px;  /* page title      line-height 1.04 */
+  --fs-h2:        32px;  /* section         line-height 1.12 */
+  --fs-h3:        23px;  /* subsection      line-height 1.25 */
+  --fs-lead:      19px;  /* lead paragraph  line-height 1.6  */
+  --fs-body:      16px;  /* default body    line-height 1.65 */
+  --fs-small:     14px;  /* secondary copy  line-height 1.55 */
+  --fs-kicker:    12px;  /* eyebrow / label uppercase, tracked */
+  --fs-mono:      13px;  /* node tags / params / code */
+
+  /* Weights */
+  --fw-normal:    400;
+  --fw-medium:    500;
+  --fw-semibold:  600;
+  --fw-bold:      700;
+
+  /* Tracking */
+  --tracking-tight:  -0.02em;  /* large display headings */
+  --tracking-normal: 0;
+  --tracking-kicker: 0.18em;   /* uppercase eyebrows / node labels */
+
+  /* Radii — sharp, dimensional. NO PILL token exists on purpose. */
+  --radius-xs: 2px;
+  --radius-sm: 4px;   /* chips, tags, inputs */
+  --radius-md: 8px;   /* buttons */
+  --radius-lg: 12px;  /* cards */
+  --radius-xl: 18px;  /* large panels */
+  --radius-2xl: 24px; /* hero / feature panels */
+
+  /* Spacing scale (px) */
+  --space-1: 4px;   --space-2: 8px;   --space-3: 12px;  --space-4: 16px;
+  --space-5: 24px;  --space-6: 32px;  --space-7: 48px;  --space-8: 64px;  --space-9: 96px;
+
+  /* Layout */
+  --measure: 1180px;  /* max content width */
+}
+
+/* ----------------------------------------------------------------------------
+   2. COLOR THEMES
+   ---------------------------------------------------------------------------- */
+
+/* ===== PRIMARY · NEURAL (default) =================================== */
+:root,
+.theme-neural {
+  /* Surfaces — deep purple-black, layered for depth */
+  --void:         #07040f;   /* deepest backdrop / starfield base */
+  --bg-color:     #0d0719;   /* base canvas */
+  --bg-deep:      #0a0514;   /* recessed wells */
+  --bg-raised:    #170d2b;   /* raised panels */
+  --bg-elevated:  #20133b;   /* elevated panels / menus */
+  --nebula-1:     #2a0f4a;   /* aubergine glow stops */
+  --nebula-2:     #45104f;   /* magenta-aubergine glow stop */
+
+  /* Ink — pale washed pink, near-white, very high contrast */
+  --text-primary:   #f8eefc;            /* ~17:1 on bg */
+  --text-secondary: #d9c6ec;            /* lilac-tinted, ~11:1 */
+  --text-muted:     #ab94c6;            /* ~5.6:1 — AA */
+  --text-faint:     #8b75a3;            /* ~4.9:1 — now AA-compliant (was sub-AA) */
+
+  /* Borders / hairlines */
+  --border-color:    rgba(201, 167, 232, 0.20);
+  --border-strong:   rgba(201, 167, 232, 0.40);
+  --border-hairline: rgba(201, 167, 232, 0.12);
+
+  /* Brand accent family */
+  --accent-primary:   #c75c6e;  /* warm bordeaux / wine — primary action / key numbers (AA on dark) */
+  --accent-primary-deep: #802338;/* deep bordeaux for filled-button base */
+  --accent-secondary: #d9b8f5;  /* lilac (Kamilla's flower) — brightened; links, soft accents */
+  --accent-violet:    #924bb2;  /* muted violet — mid-tone connector */
+  --accent-on-primary: #ffffff; /* text on bordeaux fills */
+  --spark:            #f6b187;  /* the single soft-peach "ignition" node */
+  --spark-bright:     #ffc8a6;
+
+  /* Glow & depth (depth is mandatory in this theme) */
+  --glow-magenta: 0 0 30px rgba(199, 92, 110, 0.45);
+  --glow-lilac:   0 0 24px rgba(217, 184, 245, 0.42);
+  --glow-violet:  0 0 26px rgba(146, 75, 178, 0.42);
+  --glow-spark:   0 0 26px rgba(246, 177, 135, 0.50);
+  --text-glow:    0 0 22px rgba(199, 92, 110, 0.35);
+  --button-hover-glow: 0 0 22px rgba(199, 92, 110, 0.40);
+
+  /* Glass */
+  --glass-bg:       linear-gradient(150deg, rgba(48,24,74,0.62) 0%, rgba(20,10,36,0.66) 100%);
+  --glass-fill:     rgba(34, 18, 56, 0.55);
+  --glass-border:   rgba(201, 167, 232, 0.22);
+  --glass-highlight: rgba(255, 255, 255, 0.14);
+  --backdrop-blur:  blur(22px) saturate(125%);
+
+  /* Layered shadows (soft 3D). On dark, elevation also reads via a faint lilac rim + lighter surface. */
+  --shadow-sm: 0 2px 10px rgba(0,0,0,0.55), 0 0 0 1px rgba(201,167,232,0.05);
+  --shadow-md: 0 20px 46px -10px rgba(0,0,0,0.78), 0 4px 14px rgba(0,0,0,0.55), 0 0 0 1px rgba(201,167,232,0.07);
+  --shadow-lg: 0 44px 92px -22px rgba(0,0,0,0.88), 0 14px 34px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,167,232,0.09);
+  --inner-top: inset 0 1px 0 rgba(255,255,255,0.12);
+  --shadow-color: rgba(0,0,0,0.5);
+
+  /* Status — muted, calm, drawn from the brand palette (no green/yellow/red); meaning reinforced by ICONS */
+  --text-danger:  #c76d86;   /* dusty rose — alert */
+  --text-success: #b9a6d4;   /* muted lavender — positive (paired with a check icon) */
+  --text-warning: #d8a583;   /* dusty apricot — caution */
+
+  /* Seven practice domains — ONE cohesive lavender (Kamilla's preferred), differentiated by ICON not colour */
+  --domain-text:   #c8b0ff;   --domain-bg: rgba(200,176,255,0.12);   --domain-border: rgba(200,176,255,0.44);
+  --domain-ai-text: var(--domain-text);        --domain-ai-bg: var(--domain-bg);        --domain-ai-border: var(--domain-border);
+  --domain-bizops-text: var(--domain-text);    --domain-bizops-bg: var(--domain-bg);    --domain-bizops-border: var(--domain-border);
+  --domain-marketing-text: var(--domain-text); --domain-marketing-bg: var(--domain-bg); --domain-marketing-border: var(--domain-border);
+  --domain-community-text: var(--domain-text); --domain-community-bg: var(--domain-bg); --domain-community-border: var(--domain-border);
+  --domain-sport-text: var(--domain-text);     --domain-sport-bg: var(--domain-bg);     --domain-sport-border: var(--domain-border);
+  --domain-education-text: var(--domain-text); --domain-education-bg: var(--domain-bg); --domain-education-border: var(--domain-border);
+  --domain-research-text: var(--domain-text);  --domain-research-bg: var(--domain-bg);  --domain-research-border: var(--domain-border);
+
+  /* PPPP framework hues — a single purple gradient, darkest (Past) → lilac (Protocol). All AA on dark. */
+  --p-past:     #9466c4;   /* deepest readable violet — what came before */
+  --p-present:  #a87fd2;   /* — the now */
+  --p-possible: #bb97e0;   /* — what could be */
+  --p-practice: #cbaaea;   /* — repeated action */
+  --p-protocol: #d9b8f5;   /* lilac (Kamilla's flower) — the connective thread */
+}
+
+/* ===== LIGHT (co-equal brand scheme) · pale lilac canvas =============
+   Kamilla's brand runs in two schemes: NEURAL (dark) and LIGHT. The light
+   scheme is built from her pale washed-out pink/lilac ("barely distinguishable
+   from white") with layered lilac-tinted depth — luminous, never flat.
+   Class `theme-light` (alias `theme-document`). */
+.theme-light,
+.theme-document {
+  --void: #e7def1;               /* deepest pale-lilac backdrop */
+  --bg-color: #f7f2fb;           /* pale washed lilac-pink canvas */
+  --bg-deep: #efe7f7;            /* recessed wells */
+  --bg-raised: #ffffff;          /* raised panels */
+  --bg-elevated: #fffdff;        /* elevated panels */
+  --nebula-1: #ead9f6;  --nebula-2: #f6dcee;  /* soft lilac / pale-magenta glow */
+
+  --text-primary: #1b0e30;        /* deep purple ink (~15:1) */
+  --text-secondary: rgba(27, 14, 48, 0.80);
+  --text-muted: rgba(27, 14, 48, 0.62);
+  --text-faint: rgba(27, 14, 48, 0.50);   /* ~4.7:1 — AA */
+
+  --border-color: rgba(27, 14, 48, 0.18);
+  --border-strong: rgba(27, 14, 48, 0.36);
+  --border-hairline: rgba(27, 14, 48, 0.10);
+
+  --accent-primary: #9c2742;      /* warm bordeaux, darkened for AA on light */
+  --accent-primary-deep: #802338;
+  --accent-secondary: #7a3fb8;    /* lilac → readable violet for links/text */
+  --accent-violet: #6b3a9e;
+  --accent-on-primary: #fdf7ff;
+  --spark: #b5611e;               /* peach ignition, darkened for AA on light */
+  --spark-bright: #b5611e;
+
+  /* subtle depth (NOT flat): low-alpha colored glows + soft lilac shadows */
+  --glow-magenta: 0 0 22px rgba(156,39,66,0.18);
+  --glow-lilac:   0 0 20px rgba(122,63,184,0.16);
+  --glow-violet:  0 0 20px rgba(107,58,158,0.16);
+  --glow-spark:   0 0 20px rgba(181,97,30,0.18);
+  --text-glow: none; --button-hover-glow: 0 0 18px rgba(156,39,66,0.20);
+
+  --glass-bg: linear-gradient(150deg, rgba(255,255,255,0.86) 0%, rgba(247,242,251,0.78) 100%);
+  --glass-fill: rgba(255,255,255,0.78);
+  --glass-border: rgba(27,14,48,0.14);
+  --glass-highlight: rgba(255,255,255,0.9);
+  --backdrop-blur: blur(16px) saturate(120%);
+
+  --shadow-sm: 0 2px 8px rgba(50,24,82,0.08), 0 0 0 1px rgba(50,24,82,0.03);
+  --shadow-md: 0 16px 38px -14px rgba(50,24,82,0.16), 0 3px 10px rgba(50,24,82,0.08);
+  --shadow-lg: 0 34px 70px -24px rgba(50,24,82,0.22), 0 10px 26px rgba(50,24,82,0.10);
+  --inner-top: inset 0 1px 0 rgba(255,255,255,0.7);
+  --shadow-color: rgba(50,24,82,0.14);
+
+  --text-danger: #b02458; --text-success: #6b3fa0; --text-warning: #b5611e;
+
+  --domain-text: #5a37b0; --domain-bg: rgba(90,55,176,0.08); --domain-border: rgba(90,55,176,0.30);
+  --domain-ai-text: var(--domain-text);        --domain-ai-bg: var(--domain-bg);        --domain-ai-border: var(--domain-border);
+  --domain-bizops-text: var(--domain-text);    --domain-bizops-bg: var(--domain-bg);    --domain-bizops-border: var(--domain-border);
+  --domain-marketing-text: var(--domain-text); --domain-marketing-bg: var(--domain-bg); --domain-marketing-border: var(--domain-border);
+  --domain-community-text: var(--domain-text); --domain-community-bg: var(--domain-bg); --domain-community-border: var(--domain-border);
+  --domain-sport-text: var(--domain-text);     --domain-sport-bg: var(--domain-bg);     --domain-sport-border: var(--domain-border);
+  --domain-education-text: var(--domain-text); --domain-education-bg: var(--domain-bg); --domain-education-border: var(--domain-border);
+  --domain-research-text: var(--domain-text);  --domain-research-bg: var(--domain-bg);  --domain-research-border: var(--domain-border);
+
+  --p-past: #4a2480; --p-present: #5a2e90; --p-possible: #6a39a2; --p-practice: #7a45b2; --p-protocol: #8a52bd;
+}
+
+/* ===== PRINT · grayscale, high contrast, no motion ================== */
+.theme-print {
+  --void: #ffffff; --bg-color: #ffffff; --bg-deep: #ffffff;
+  --bg-raised: #ffffff; --bg-elevated: #ffffff; --nebula-1: #fff; --nebula-2: #fff;
+  --text-primary: #000; --text-secondary: #222; --text-muted: #555; --text-faint: #777;
+  --border-color: #222; --border-strong: #000; --border-hairline: #888;
+  --accent-primary: #000; --accent-primary-deep: #000; --accent-secondary: #000;
+  --accent-violet: #000; --accent-on-primary: #fff; --spark: #000; --spark-bright: #000;
+  --glow-magenta: none; --glow-lilac: none; --glow-violet: none; --glow-spark: none;
+  --text-glow: none; --button-hover-glow: none;
+  --glass-bg: #fff; --glass-fill: #fff; --glass-border: #222; --glass-highlight: #222; --backdrop-blur: none;
+  --shadow-sm: none; --shadow-md: none; --shadow-lg: none; --inner-top: none; --shadow-color: transparent;
+  --text-danger: #000; --text-success: #000; --text-warning: #000;
+  --p-past:#000;--p-present:#000;--p-possible:#000;--p-practice:#000;--p-protocol:#000;
+}
+
+/* ----------------------------------------------------------------------------
+   3. SEMANTIC ELEMENT STYLES
+   ---------------------------------------------------------------------------- */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  text-wrap: balance;
+  margin: 0;
+}
+h1 { font-size: var(--fs-h1); font-weight: var(--fw-bold);     line-height: 1.04; letter-spacing: var(--tracking-tight); }
+h2 { font-size: var(--fs-h2); font-weight: var(--fw-semibold); line-height: 1.12; letter-spacing: var(--tracking-tight); }
+h3 { font-size: var(--fs-h3); font-weight: var(--fw-semibold); line-height: 1.25; }
+
+.display {
+  font-family: var(--font-display);
+  font-size: var(--fs-display);
+  font-weight: var(--fw-bold);
+  line-height: 0.96;
+  letter-spacing: -0.025em;
+}
+.lead  { font-size: var(--fs-lead); color: var(--text-secondary); line-height: 1.6; text-wrap: pretty; margin: 0; }
+p      { font-size: var(--fs-body); color: var(--text-secondary); line-height: 1.65; text-wrap: pretty; margin: 0; }
+small, .small { font-size: var(--fs-small); color: var(--text-muted); }
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: var(--fs-kicker);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-kicker);
+  color: var(--accent-secondary);
+}
+
+code, pre, .mono { font-family: var(--font-mono); font-size: var(--fs-mono); }
+
+a { color: var(--accent-secondary); text-decoration: none; transition: color .2s ease; }
+a:hover { color: var(--accent-primary); }
+
+::selection { background: rgba(199, 92, 110, 0.34); color: var(--text-primary); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}

@@ -1,0 +1,32 @@
+action,skill_A,skill_B,recommended_keep,reason
+MERGE,internal-comms-anthropic,internal-comms-community,internal-comms-anthropic,"same skill, two source labels"
+MERGE,brand-guidelines-anthropic,brand-guidelines-community,brand-guidelines-anthropic,"same skill, two source labels"
+MERGE,error-debugging-error-analysis,error-diagnostics-error-analysis,error-debugging-error-analysis,"debugging==diagnostics, identical content"
+MERGE,error-debugging-error-trace,error-diagnostics-error-trace,error-debugging-error-trace,"debugging==diagnostics, identical content"
+MERGE,code-refactoring-refactor-clean,codebase-cleanup-refactor-clean,code-refactoring-refactor-clean,same refactor-clean content
+MERGE,code-refactoring-tech-debt,codebase-cleanup-tech-debt,code-refactoring-tech-debt,same tech-debt content
+MERGE,codebase-cleanup-deps-audit,dependency-management-deps-audit,codebase-cleanup-deps-audit,same deps-audit content
+MERGE,code-documentation-doc-generate,documentation-generation-doc-generate,code-documentation-doc-generate,same doc-generate content
+MERGE,code-review-ai-ai-review,performance-testing-review-ai-review,code-review-ai-ai-review,"same ai-review content, mis-parented"
+INCOMPLETE_DESC,brand-perception-psychologist,,,"empty/placeholder description - fill, keep as stub, or drop"
+INCOMPLETE_DESC,copywriting-psychologist,,,"empty/placeholder description - fill, keep as stub, or drop"
+INCOMPLETE_DESC,emotional-arc-designer,,,"empty/placeholder description - fill, keep as stub, or drop"
+INCOMPLETE_DESC,headline-psychologist,,,"empty/placeholder description - fill, keep as stub, or drop"
+INCOMPLETE_DESC,identity-mirror,,,"empty/placeholder description - fill, keep as stub, or drop"
+INCOMPLETE_DESC,loss-aversion-designer,,,"empty/placeholder description - fill, keep as stub, or drop"
+INCOMPLETE_DESC,objection-preemptor,,,"empty/placeholder description - fill, keep as stub, or drop"
+INCOMPLETE_DESC,onboarding-psychologist,,,"empty/placeholder description - fill, keep as stub, or drop"
+INCOMPLETE_DESC,pitch-psychologist,,,"empty/placeholder description - fill, keep as stub, or drop"
+INCOMPLETE_DESC,scarcity-urgency-psychologist,,,"empty/placeholder description - fill, keep as stub, or drop"
+INCOMPLETE_DESC,sequence-psychologist,,,"empty/placeholder description - fill, keep as stub, or drop"
+INCOMPLETE_DESC,subject-line-psychologist,,,"empty/placeholder description - fill, keep as stub, or drop"
+INCOMPLETE_DESC,trust-calibrator,,,"empty/placeholder description - fill, keep as stub, or drop"
+INCOMPLETE_DESC,ux-persuasion-engineer,,,"empty/placeholder description - fill, keep as stub, or drop"
+INCOMPLETE_DESC,visual-emotion-engineer,,,"empty/placeholder description - fill, keep as stub, or drop"
+KEEP_VARIANT,"KEEP language variants (py/rust/ts/dotnet/java/go): azure-*, dbos-*, m365-agents-*, fp-*",,,
+KEEP_VARIANT,KEEP app/integration variants (Composio *-automation): gmail/sheets/slides/docs/drive/calendar/asana/jira/linear/notion/render/square/stripe/shopify/twitter/airtable/dropbox/onedrive/zendesk,,,
+KEEP_VARIANT,"KEEP Azure service variants: azure-resource-manager-{sql,mysql,postgresql,redis,cosmosdb,fabric,...}",,,
+KEEP_VARIANT,KEEP format variants: docx-official vs pptx-official,,,
+KEEP_VARIANT,KEEP modality variants: imagen (image) vs veo (video) vs lyria (audio),,,
+KEEP_VARIANT,"KEEP Apple HIG doc sections: hig-{inputs,technologies,menus,controls,patterns,foundations,platforms,...}",,,
+KEEP_VARIANT,KEEP distinct roles/frameworks: senior-architect vs senior-fullstack; angular-ui-patterns vs react-ui-patterns; context-save vs context-restore,,,
