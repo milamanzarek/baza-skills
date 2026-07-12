@@ -6,8 +6,8 @@ This folder, `baza-skills`, is the single central home for Kamilla's agent skill
 One physical home for every skill, deduplicated, so the same skill is never copied and drifted across many agent directories again. Git history is the anti-amnesia property: every change is a logged commit.
 
 ## What is here now
-- `skills\` : 1460 canonical skills, one folder each, deduplicated from 2888 source directories across the accessible locations (CHERDAK capture, CORE_OS agent stashes, project homes, and `~\.gemini\skills`).
-- `_held-for-review\` : 3 secret-bearing skills withheld pending review.
+- `skills\` : 1461 canonical skills, one folder each, deduplicated from the original 2888 source directories plus later reviewed additions.
+- `_held-for-review\` : intake batches pending review (from-CHERDAK-2026-07-06, from-kepano-obsidian-skills-2026-07-11). Note: the 3 secret-bearing skills flagged 2026-06-18 were reviewed 2026-07-12 and deleted, not retained (see CHANGELOG); they never physically lived in this folder.
 - `01_INDEX_skills.md` : the folder dashboard and registry summary.
 - `SKILLS_MANIFEST.xlsx`, `SKILLS_CONSOLIDATION_REPORT_2026-06-18.md`, `CHANGELOG.md` : provenance and audit trail.
 

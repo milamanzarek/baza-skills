@@ -7,7 +7,7 @@ Make `C:\Users\kamil\PROJECTS\baza-skills` the single physical home for skills, 
 
 ## Current state (done 2026-06-18)
 - `baza-skills\skills\` contains 1,460 deduplicated canonical skills (copied in; originals left in place; no agent access removed).
-- 3 secret-bearing skills are held out, in `_held-for-review\` (not placed).
+- 3 secret-bearing skills were held out (not placed); RESOLVED 2026-07-12 - reviewed and deleted, not retained (see CHANGELOG).
 - `C:\Users\kamil\.claude\skills` (~102) was NOT swept (protected location, could not be mounted).
 - Repo is uncommitted (the mount was too slow for git in-session).
 
@@ -21,7 +21,7 @@ git commit -m "Consolidate 1460 deduped skills into baza-skills"
 
 ## Step 1: bring in the two blocked / held inputs
 1. Export `C:\Users\kamil\.claude\skills` to a non-protected folder (for example `C:\Users\kamil\PROJECTS\_claude-skills-export`), then ask the assistant to dedupe-and-fold it into `baza-skills\skills` (same copy-in + family-dedup as before).
-2. Review the 3 held skills in `_held-for-review\` (`comfyui-gateway`, `aws-iam-best-practices`, `k8s-manifest-generator`), scrub any real credential, then add them to `baza-skills\skills`.
+2. DONE 2026-07-12: the 3 held skills (`comfyui-gateway`, `aws-iam-best-practices`, `k8s-manifest-generator`) were reviewed and deleted (not added); their sole copies in the CHERDAK skills_backup were removed.
 
 ## Step 2: create the agent pointers (the "agents' brains/configs" note)
 Two mechanisms. Prefer config-repointing for skill dirs that live inside a git repo (a junction inside a tracked repo confuses git); use a junction for true home dirs.
