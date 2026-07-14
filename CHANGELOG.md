@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2026-07-14 Add advisor-orchestrator-worker (first security-reviewed install) + first agent-access junction
+- Added `skills/advisor-orchestrator-worker/` (5 files: SKILL.md, README.md, references/x3). Provenance: third-party, github.com/Shubhamsaboo/awesome-llm-apps @ 6ce858f (2026-07-13), Apache-2.0, manual copy (no npx installer).
+- First skill to enter through the full pipeline: Skill Install Security Review SOP pass (2026-07-14, Baza: `00-POCHTA/AGENT_NOTES/DRAFT-Skill-Security-Review-Advisor-Orchestrator-Worker_Fable5_2026-07-14.md`) + Tool Triage SOP section 8 graduation gates. Kamilla approved install and placement 2026-07-14.
+- LOCAL EDIT: Baza guard header added to SKILL.md (workers default to tool-less API fallback; `agy --dangerously-skip-permissions` requires Kamilla's per-session approval; no secrets in briefs). Provisional pending her Gate 3 ruling. Re-scanned after edit per SOP step 6.
+- Created the library's FIRST agent-access junction (the "agent access repointing (junctions)" item pending since 2026-06-18): `C:\Users\kamil\.claude\skills\advisor-orchestrator-worker` -> this folder. One canonical copy; Claude Code loads through the junction. Pattern note: per-skill junctions on adoption only, never a bulk library link (would make `_held-for-review` and unreviewed skills live, bypassing the security review SOP).
+- Repo-side evals from the source repo deliberately NOT copied (upstream convention: "you install only what runs").
+
 ## 2026-06-18 Initial consolidation (copy-in)
 - Inventoried 2,888 skill directories across accessible sources (PROJECTS + ~/.gemini/skills).
 - Deduplicated to 1,463 distinct families.

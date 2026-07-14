@@ -12,7 +12,7 @@ Folder dashboard for `baza-skills\skills`. Generated 2026-06-18.
 
 ## Registry summary
 
-- Skills placed (deduplicated, one canonical per family): **1461**
+- Skills placed (deduplicated, one canonical per family): **1462** (+1 on 2026-07-14, advisor-orchestrator-worker, first security-reviewed install; see CHANGELOG)
 - Skills held for review (secret-bearing): **0** (the 3 flagged 2026-06-18 were reviewed 2026-07-12 and deleted, not retained)
 
 | Provenance | Count | Meaning |
